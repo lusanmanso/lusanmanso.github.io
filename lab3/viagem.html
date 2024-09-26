@@ -17,8 +17,59 @@
             </nav>
             <img src="images/virgen_blanca.png" alt="Andre Mari Zuriaren Enparantza">
         </header>
+            <h2>Viagem</h2>
+
+            <form method="post" action="https://postman-echo.com/post">
+
+                <!-- First Name and Last Name -->
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required><br><br>
         
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required><br><br>
+        
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+        
+                <!-- Departure and Return Dates -->
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate" required><br><br>
+        
+                <label for="returnDate">Return Date:</label>
+                <input type="date" id="returnDate" name="returnDate" required><br><br>
+        
+                <!-- Number of Passengers -->
+                <label for="passengers">Number of Passengers:</label>
+                <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of passengers" required><br><br>
+        
+                <!-- Preferred Transportation -->
+                <label for="transport">Preferred Mode of Transportation:</label>
+                <select id="transport" name="transport" required>
+                    <option value="car">Car</option>
+                    <option value="train">Train</option>
+                    <option value="plane">Plane</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+        
+                <!-- Service Level -->
+                <label for="service">Which service do you prefer for your trip:</label><br>
+                <input type="radio" id="basic" name="service" value="basic" required>
+                <label for="basic">Basic</label><br>
+                <input type="radio" id="premium" name="service" value="premium">
+                <label for="premium">Premium</label><br><br>
+        
+                <!-- Special Requests -->
+                <label for="specialRequests">Special Requests:</label><br>
+                <textarea id="specialRequests" name="specialRequests" placeholder="Describe any special requests..." rows="4" cols="50"></textarea><br><br>
+        
+                <!-- Budget per Person per Day -->
+                <label for="budget">How much do you expect to spend per person per day (in €):</label>
+                <input type="number" id="budget" name="budget" min="0" placeholder="Amount in euros" required><br><br>
+        
+                <!-- Control Buttons -->
+                <input type="reset" value="Clear">
+                <input type="submit" value="Submit">
+            </form>
     </body>
-
-
 </html>
