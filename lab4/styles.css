@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+    background-color: #3AB795;
+    margin: 0px;
+    padding: 20px;
+    color: white;
+    width: 100vw;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex; /* To distribute the links */                
+    justify-content: space-between; /* Separates the links equally */
+    background-color: #31493c;
+    padding: 10px 50px;
+    width: 100vw; /* The nav takes the whole screen width */
+    box-sizing: border-box; /* Asegura que el padding no desborde el ancho del nav */
+}
+
+nav a {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffcf56;
+}
+
+nav a:active {
+    color: #ffcf56;
+}
+
+main {
+    background-color: #EDEAD0;
+}
+
+footer {
+    text-align: center;
+    background-color: #31493c;
+    padding: 2px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
