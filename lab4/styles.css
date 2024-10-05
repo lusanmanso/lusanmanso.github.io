@@ -1,45 +1,65 @@
+/* Encabezado */
 h1 {
     text-align: center;
     background-color: #3AB795;
-    margin: 0px;
+    margin: 0; /* Elimina margenes */
     padding: 20px;
     color: white;
-    width: 100vw;
+    width: 100vw; /* Se asegura de que el ancho ocupe toda la pantalla */
     font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
+/* Barra de navegacion */
 nav {
-    display: flex; /* To distribute the links */                
-    justify-content: space-between; /* Separates the links equally */
+    display: flex;
+    justify-content: space-between; /* separacion equitativa de los elementos */
+    align-items: center; /* Alinea los enlaces */
     background-color: #31493c;
-    padding: 10px 50px;
-    width: 100vw; /* The nav takes the whole screen width */
-    box-sizing: border-box; /* Asegura que el padding no desborde el ancho del nav */
+    padding: 10px 50px; /* mas separacion en las esquinas */
+    width: 100vw;
+    box-sizing: border-box; /* Evita que el padding cause desbordes */
 }
 
+/* enlaces navegacion */
 nav a {
     color: white;
     font-family: Arial, sans-serif;
     font-weight: bold;
     text-decoration: none;
+    padding: 10px; /* Añade un poco de espacio alrededor de los enlaces */
+    transition: color 0.3s ease; /* Suaviza la transicion del color al pasar el cursor */
 }
 
+/* Hover para enlaces */
 nav a:hover {
     color: #ffcf56;
 }
 
-nav a:active {
-    color: #ffcf56;
-}
-
+/* Fondo del contenido principal */
 main {
     background-color: #EDEAD0;
+    padding: 20px; /* Añade espacio al contenido principal */
+    margin: 0; /* Elimina margenes no deseados */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
+/* Pie de pag */
 footer {
     text-align: center;
     background-color: #31493c;
-    padding: 2px;
+    padding: 10px; /* Ajuste de padding para un mejor espaciado */
     color: white;
     font-family: Arial, sans-serif;
+    position: relative; /* Permite ajustar su pos si es necesario */
+    bottom: 0;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+/* Ajustes globales para eliminar los margenes */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
