@@ -1,65 +1,72 @@
-/* Encabezado */
-h1 {
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo general que resalta las secciones */
+    font-family: Arial, sans-serif;
+}
+
+header, main, footer {
+    margin: 20px auto; /* Espaciado alrededor de cada sección */
+    border-radius: 15px; /* Bordes redondeados para todas las secciones */
+    background-color: white; /* Fondo blanco para el contenido */
+    max-width: 1200px; /* Anchura máxima de las secciones */
+    overflow: hidden; /* Asegura que las imágenes y otros contenidos respeten los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar sensación de profundidad */
+}
+
+header h1 {
     text-align: center;
     background-color: #3AB795;
-    margin: 0; /* Elimina margenes */
+    margin: 0;
     padding: 20px;
     color: white;
-    width: 100vw; /* Se asegura de que el ancho ocupe toda la pantalla */
     font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
 }
 
-/* Barra de navegacion */
 nav {
     display: flex;
-    justify-content: space-between; /* separacion equitativa de los elementos */
-    align-items: center; /* Alinea los enlaces */
+    justify-content: space-between;
     background-color: #31493c;
-    padding: 10px 50px; /* mas separacion en las esquinas */
-    width: 100vw;
-    box-sizing: border-box; /* Evita que el padding cause desbordes */
+    padding: 10px 50px;
+    box-sizing: border-box;
 }
 
-/* enlaces navegacion */
 nav a {
     color: white;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
     text-decoration: none;
-    padding: 10px; /* Añade un poco de espacio alrededor de los enlaces */
-    transition: color 0.3s ease; /* Suaviza la transicion del color al pasar el cursor */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
 }
 
-/* Hover para enlaces */
 nav a:hover {
     color: #ffcf56;
 }
 
-/* Fondo del contenido principal */
-main {
-    background-color: #EDEAD0;
-    padding: 20px; /* Añade espacio al contenido principal */
-    margin: 0; /* Elimina margenes no deseados */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-/* Pie de pag */
+main {
+    background-color: #EDEAD0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 footer {
     text-align: center;
     background-color: #31493c;
-    padding: 10px; /* Ajuste de padding para un mejor espaciado */
+    padding: 10px;
     color: white;
     font-family: Arial, sans-serif;
-    position: relative; /* Permite ajustar su pos si es necesario */
-    bottom: 0;
-    width: 100vw;
-    box-sizing: border-box;
+    border-bottom-left-radius: 15px; /* bordes inferiores redondeados */
+    border-bottom-right-radius: 15px;
 }
 
-/* Ajustes globales para eliminar los margenes */
-body, html {
+footer p {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
