@@ -28,35 +28,40 @@
             
             <section id="fotografias">
             <h3>Fotografias</h3>
-                <p>
+                <div class="grid-photos">
                     <!--Img 1-->
                     <a href="images/machete_plaza_grande.jpg" target="photoFrame">
                         <img src="images/machete_plaza_pequena.jpg" alt="Matxete Plaza">
+                        <p>Figura 1: Matxete Plaza</p>
                     </a>
                     <!--Img 2-->
                     <a href="images/florida_parque_grande.jpg" target="photoFrame">
                         <img src="images/florida_parque_pequena.jpg" alt="Florida Parkea">
+                        <p>Figura 2: Florida Parkea</p>
                     </a>
                     <!--Img 3-->
                     <a href="images/catedral_nueva_grande.jpg" target="photoFrame">
                         <img src="images/catedral_nueva_pequena.jpg" alt="Katedral Berria">
+                        <p>Figura 3: Katedral Berria</p>
                     </a>
-                </p>
+                </div>
 
-                <!--Adding the iframe, but it's too big for the photos :(-->
-                <iframe name="photoFrame" width="800" height="600"></iframe>
+                <!--Now it's ok-->
+                <iframe name="photoFrame" width="600" height="401"></iframe>
             </section>
 
             <section id="video">
                 <h3 id="video">Video</h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/kQhXcmtgZck?si=rQ074k0hQMzAmkKO" 
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="contenedor-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kQhXcmtgZck?si=rQ074k0hQMzAmkKO" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </section>
 
             <section id="poema">
                 <h3 id="poema">Poema</h3>
-                <!--I could also use <br> but the <pre> format gives it another monospaced look that I like-->
+                <!--Pre is clearly better-->
                 <p>Poema em euskera:</p>
                 <pre>
                     Mendien artean zutik, zaharra eta isila,
