@@ -1,3 +1,4 @@
+/* LAB 4 */
 /* Part 1: Estilizar as estruturas das paginas */
 body {
     margin: 0;
@@ -175,4 +176,17 @@ label, input {
 
 .inline-question input {
     margin-right: 5px; /* Espacio a la derecha de las entradas */
+}
+
+/* LAB 5 */
+li:nth-child(2n+1) { /* Cores dos items das listas */
+    color: lightseagreen;
+}
+
+ul { /* Nas listas não ordenadas, altere o icon */
+    list-style: circle;
+}
+
+ol { /* Nas listas ordenadas, altere a numeração usada */
+    list-style-type: upper-roman;
 }
