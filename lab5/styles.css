@@ -18,6 +18,8 @@ header, main, footer {
 
 header h1 {
     text-align: center;
+    /* Mayus everything - Lab 5 */
+    text-transform: uppercase;
     background-color: #3AB795;
     margin: 0;
     padding: 20px;
@@ -179,6 +181,10 @@ label, input {
 }
 
 /* LAB 5 */
+
+li {
+    font-size: 2em;
+}
 li:nth-child(2n+1) { /* Cores dos items das listas */
     color: lightseagreen;
 }
