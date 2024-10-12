@@ -190,3 +190,53 @@ ul { /* Nas listas não ordenadas, altere o icon */
 ol { /* Nas listas ordenadas, altere a numeração usada */
     list-style-type: upper-roman;
 }
+
+/* Estilo das Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para o cabeçalho da tabela */
+th:nth-child(1){
+    background-color: #2f4f66;
+    color: white;
+    font-weight: bold;
+}
+
+th:nth-child(2){
+    background-color: #8d8d8d;
+    color: white;
+    font-weight: bold;
+}
+
+/* Lineas impares izquierda */
+tr:nth-child(odd) td:nth-child(1) {
+    background-color: #2f4f66; /* Cor azul-escuro */
+    color: white;
+}
+
+/* Lineas impares derecha */
+tr:nth-child(odd) td:nth-child(2) {
+    background-color: #8d8d8d; /* Cor cinza */
+    color: white;
+}
+
+/* Lineas pares */
+tr:nth-child(even) td:nth-child(1) {
+    background-color: white; /* Blanco para la izquierda */
+    color: black; /* Texto en negro */
+}
+
+tr:nth-child(even) td:nth-child(2) {
+    background-color: white; /* Blanco para la derecha */
+    color: black; /* Texto en negro */
+}
+
