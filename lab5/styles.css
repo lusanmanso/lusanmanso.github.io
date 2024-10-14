@@ -119,6 +119,10 @@ iframe[name="photoFrame"] {
     transform: scale(1.05);
 }
 
+/* Lab 5 - Cursor */
+.grid-photos a {
+    cursor: zoom-in;
+}
 
 #video {
     text-align: center;
