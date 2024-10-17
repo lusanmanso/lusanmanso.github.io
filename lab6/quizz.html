@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <title>Cidade</title>
+    </head>
+    <body>
+        <header>
+            <h1>Vitoria-Gasteiz</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="local.html">Localização</a>
+                <a href="multimedia.html">Multimédia</a>
+                <a href="info.html">Informação</a>
+                <a href="quizz.html">Quiz</a>
+                <a href="viagem.html">Viagem</a>
+            </nav>
+            <img src="images/murales_banner.jpg" alt="Vitoriaren Banner">
+        </header>
+        <main>
+            <h2>Quiz</h2>
+            
+            <form method="get" action="https://postman-echo.com/get">
+
+                <!--Personal data-->
+                <fieldset>
+                    <legend>Datos Personales</legend>
+        
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Write your name" required autofocus
+        
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" placeholder="Write your surname" autocomplete="on">
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </fieldset>
+        
+                <!--Quiz questions-->
+                <fieldset>
+                    <legend>Quizz about Vitoria-Gasteiz</legend>
+        
+                    <!-- Q1: Text -->
+                    <label for="favMonument">What's your favourite monument?</label>
+                    <input type="text" id="favMonument" name="favMonument" placeholder="Write the name of the monument" size="30" maxlength="50" required>
+        
+                    <!-- Q2: Radio -->
+                    <div class="inline-question">
+                        <label>What's the name of the ring surrounding Vitoria?</label>
+                        <input type="radio" id="zabalgana" name="anilloVerde" value="Zabalgana" required>
+                        <label for="zabalgana">Zabalgana</label>
+                        <input type="radio" id="salburua" name="anilloVerde" value="Salburua">
+                        <label for="salburua">Salburua</label>
+                    </div>
+        
+                    <!-- Q3: Checkbox -->
+                    <div class="inline-question">
+                        <label>What do you like more about Vitoria-Gasteiz?</label>
+                        <input type="checkbox" id="gastronomy" name="tastes" value="gastronomy">
+                        <label for="gastronomy">Gastronomy</label>
+                        <input type="checkbox" id="culture" name="tastes" value="culture">
+                        <label for="culture">Culture</label>
+                        <input type="checkbox" id="nature" name="tastes" value="nature">
+                        <label for="nature">Nature</label>
+                    </div>
+        
+                    <!-- Q4: Date -->
+                    <label for="visitDate">When was the last time you went visited Vitoria-Gasteiz?</label>
+                    <input type="date" id="visitDate" name="visitDate" required>
+        
+                    <!-- Q5: Hour -->
+                    <label for="visitHour">At what time do you like to explore the city?</label>
+                    <input type="time" id="visitHour" name="visitHour">
+        
+                    <!-- Q6: Colour -->
+                    <label for="cityColor">Choose a color that reminds you of Vitoria-Gasteiz:</label>
+                    <input type="color"id="cityColor" name="cityColor" value="#006400">
+        
+                    <!-- Q7: Number -->
+                    <label for="habitants">What population do you think Vitoria has? (on thousands)?</label>
+                    <input type="number" id="habitants" name="habitants" min="50" max="300" step="10" placeholder="On thousands" required>
+        
+                    <!-- Q8: Range -->
+                    <label for="satisfaction">How satisfied are you with the city?</label>
+                    <input type="range" id="satisfaction" name="satisfaction" min="0" max="10" step="1" value="5">
+        
+                    <!-- Q9: Picture -->
+                    <label for="cityImage">Select an image that combines with Vitoria-Gasteiz:</label>
+                    <input type="image" id="cityImage" name="cityImage" src="https://via.placeholder.com/150" alt="Vitoria-Gasteiz image">
+        
+                </fieldset>
+        
+                <!-- Control buttons -->
+                <input type="reset" value="Clean">
+                <input type="submit" value="Submit">
+        
+            </form>
+
+        </main>
+
+        <footer>
+            <p>DIW 2024</p>
+        </footer>
+ 
+    </body>
+</html>

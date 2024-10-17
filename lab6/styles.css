@@ -1,0 +1,252 @@
+/* LAB 4 */
+/* Part 1: Estilizar as estruturas das paginas */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo general que resalta las secciones */
+    font-family: Arial, sans-serif;
+}
+
+header, main, footer {
+    margin: 20px auto; /* Espaciado alrededor de cada sección */
+    border-radius: 15px; /* Bordes redondeados para todas las secciones */
+    background-color: white; /* Fondo blanco para el contenido */
+    max-width: 1200px; /* Anchura máxima de las secciones */
+    overflow: hidden; /* Asegura que las imágenes y otros contenidos respeten los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar sensación de profundidad */
+}
+
+header h1 {
+    text-align: center;
+    /* Mayus everything - Lab 5 */
+    text-transform: uppercase;
+    background-color: #3AB795;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #31493c;
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+main {
+    background-color: #EDEAD0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+    background-color: #31493c;
+    padding: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    border-bottom-left-radius: 15px; /* bordes inferiores redondeados */
+    border-bottom-right-radius: 15px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Part 2: Estilizar links */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcf56;
+}
+
+/* Part 3: Estilizar pagina multimedia */
+
+#fotografias h3, #video h3, #poema h3 {
+    color: #4CAF50;
+    font-size: 24px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+iframe[name="photoFrame"] {
+    display: block;
+    margin: 30px auto;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+}
+
+.grid-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* I got it from internet I don't know what it does */
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.grid-photos a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.grid-photos img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Response to big*/
+.grid-photos img:hover {
+    transform: scale(1.05);
+}
+
+/* Lab 5 - Cursor */
+.grid-photos a {
+    cursor: zoom-in;
+}
+
+#video {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#video iframe {
+    width: 70%;  /* Make the video RESPONSIVE */
+    border: 2px solid #4CAF50; 
+    border-radius: 10px;  /* redondear las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* sombra */
+    transition: transform 0.3s ease;  /* hover effect */
+}
+
+#poema p {
+    color: #4CAF50;
+    font-size: 16px;
+}
+
+#poema pre {
+    background-color: #f9f9f9; /* Fondo de la caja */
+    border: 2px solid #4CAF50; /* Bordes */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin: 20px 0; /* Margen vertical */
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-style: italic;
+    line-height: 1.8;
+    text-align: justify;
+    text-align: center; /* Centrar el texto */
+}
+
+/* Part 4: Estilizar Label & Input */
+label {
+    font-size: small;
+}
+
+input {
+    font-size: medium;
+}
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inline-question {
+    display: flex; /* usamos flex para alinear horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 10px; /* Espacio entre preguntas */
+}
+
+.inline-question label {
+    margin-right: 10px; /* Espacio a la derecha de la etiqueta */
+}
+
+.inline-question input {
+    margin-right: 5px; /* Espacio a la derecha de las entradas */
+}
+
+/* LAB 5 */
+
+li {
+    font-size: 2em;
+}
+li:nth-child(2n+1) { /* Cores dos items das listas */
+    color: lightseagreen;
+}
+
+ul { /* Nas listas não ordenadas, altere o icon */
+    list-style: circle;
+}
+
+ol { /* Nas listas ordenadas, altere a numeração usada */
+    list-style-type: upper-roman;
+}
+
+/* Estilo das Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para o cabeçalho da tabela */
+th:nth-child(1){
+    background-color: #2f4f66;
+    color: white;
+    font-weight: bold;
+}
+
+th:nth-child(2){
+    background-color: #8d8d8d;
+    color: white;
+    font-weight: bold;
+}
+
+/* Lineas impares izquierda */
+tr:nth-child(odd) td:nth-child(1) {
+    background-color: #2f4f66; /* Cor azul-escuro */
+    color: white;
+}
+
+/* Lineas impares derecha */
+tr:nth-child(odd) td:nth-child(2) {
+    background-color: #8d8d8d; /* Cor cinza */
+    color: white;
+}
+
+/* Lineas pares */
+tr:nth-child(even) td:nth-child(1) {
+    background-color: white; /* Blanco para la izquierda */
+    color: black; /* Texto en negro */
+}
+
+tr:nth-child(even) td:nth-child(2) {
+    background-color: white; /* Blanco para la derecha */
+    color: black; /* Texto en negro */
+}
+
