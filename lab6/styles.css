@@ -17,7 +17,7 @@ header, main, footer {
 }
 
 header h1 {
-    text-align: center;
+    text-align: center; 
     /* Mayus everything - Lab 5 */
     text-transform: uppercase;
     background-color: #3AB795;
@@ -28,13 +28,25 @@ header h1 {
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px;
 }
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 nav {
     display: flex;
     justify-content: space-between;
+    
     background-color: #31493c;
     padding: 10px 50px;
     box-sizing: border-box;
+
+    max-width: 1200px; /* Anchura máxima de las secciones */
+    width: 100%; /* Asegura que el nav ocupe todo el ancho disponible hasta el max-width */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar sensación de profundidad */
+
 }
 
 header img {
