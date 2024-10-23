@@ -1,3 +1,43 @@
 body {
     background-color: #b3b3b3;
 }
+
+/* Estilos existentes... */
+
+/* Efecto de rebote y movimiento lateral en la imagen al pasar el cursor */
+img {
+    transition: transform 0.3s ease; /* Transición suave */
+    display: inline-block; /* Necesario para que las transformaciones funcionen correctamente */
+}
+
+img:hover {
+    transform: translateX(10px) translateY(-10px) scale(1.1); /* Mover a la derecha y arriba */
+}
+
+/* Efecto inverso para volver a la posición original */
+img:hover {
+    animation: bounceSide 0.5s ease; /* Añadir la animación de rebote */
+}
+
+@keyframes bounceSide {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0) translateY(0); /* Sin desplazamiento */
+    }
+    40% {
+        transform: translateX(-10px) translateY(-10px); /* Desplazar a la izquierda y arriba */
+    }
+    60% {
+        transform: translateX(10px) translateY(5px); /* Desplazar a la derecha y hacia abajo */
+    }
+}
+
+/* Estilo para los enlaces */
+a {
+    transition: color 0.3s ease, transform 0.3s ease; /* Suaviza la transición del color y el efecto de zoom */
+    color: #007bff; /* Color inicial */
+}
+
+a:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del enlace al pasar el cursor */
+    color: #0056b3; /* Cambia el color al pasar el mouse */
+}

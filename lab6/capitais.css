@@ -163,6 +163,8 @@ nav a:last-child:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 
     background-color: #f7f7f7;
+
+    overflow: hidden;
 }
 
 #cidades section:hover {
@@ -185,4 +187,33 @@ nav a:last-child:hover {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+#parallax {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: url('images/gurudas-gandhi.jpg') no-repeat center center;
+    background-attachment: fixed; /* Efeito parallax */
+    background-size: cover; /* Cobre toda a área */
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra el contenido */
+    text-align: center;
+    color: white; /* Cor do texto */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /*semitransparente para legi*/
+    border-radius: 10px;
+}
+
+.parallax-content h2 {
+    font-size: 2.5rem;
+}
+
+.parallax-content p {
+    font-size: 1.2rem;
 }
