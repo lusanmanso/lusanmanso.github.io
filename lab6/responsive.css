@@ -1,0 +1,369 @@
+@media screen and (max-width: 480px) {
+    /* Body - Adjust Padding and Margins */
+    body {
+        padding: 10px;
+    }
+
+    /* Header */
+    header h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    header img {
+        width: 100%; /* Para que no se vea apretadísimo */
+        height: auto;
+    }
+
+    /* Nav - Stack todo aunque tengo que arreglarlo */
+    .nav-container {
+        display: block;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 5px;
+        font-size: 14px;
+        display: block;
+    }
+
+    /* Main Content */
+    main h2 {
+        font-size: 18px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+
+    /* Footer - Adjust Padding */
+    footer {
+        padding: 5px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    /* Table Styles - Make Responsive */
+    table {
+        font-size: 11px;
+        overflow-x: auto; /* Para que no se rompa la hago scrollable */
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    /* Grid Photos - Make Single Column */
+    .grid-photos {
+        grid-template-columns: 1fr; /* Toma todo el tamaño, solo enseña una */
+        gap: 10px;
+    }
+
+    .grid-photos img {
+        max-width: 100%;
+    }
+
+    /* Video Section */
+    #video iframe {
+        width: 100%;
+    }
+
+    /* Poem Section */
+    #poema pre {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Adjust General Font Sizes */
+    label, input {
+        font-size: 12px;
+    }
+
+    /* Formulario  Elements */
+    label {
+        font-size: 14px; /* Make labels easier to read */
+    }
+
+    input, select, textarea {
+        font-size: 14px; /* Increase font size for inputs */
+        width: 100%; /* Make inputs take the full width */
+        padding: 8px; /* Add some padding */
+        margin-bottom: 10px; /* Space between inputs */
+    }
+
+    /* Control Buttons */
+    input[type="submit"], input[type="reset"] {
+        width: 100%; /* Make buttons full width */
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 10px; /* Space between buttons */
+    }
+
+    /* Footer - Adjust Padding */
+    footer {
+        padding: 5px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    body {
+        padding: 15px;
+        margin: 0; /* Evitar márgenes predeterminados */
+    }
+
+    header {
+        margin-left: 10px; /* Margen izquierdo */
+        margin-right: 10px; /* Margen derecho */
+    }
+
+    header h1 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    header img {
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-container {
+        display: block;
+        text-align: center;
+        margin: 10px; /* Margen para la barra de navegación */
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px;
+        flex-wrap: wrap;
+        margin: 10px; /* Margen para la navegación */
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        margin: 0 10px; /* Margen lateral en los enlaces de navegación */
+    }
+
+    /* Ajustar tamaños de fuentes generales */
+    label, input {
+        font-size: 14px;
+    }
+
+    /* Formulario Elements */
+    input, select, textarea {
+        font-size: 16px; /* Aumentar tamaño de fuente para inputs */
+        padding: 10px; /* Aumentar el padding para entradas */
+        margin: 10px 0; /* Espacio entre entradas */
+        width: calc(100% - 20px); /* Ancho total menos márgenes */
+    }
+
+    /* Control Buttons */
+    input[type="submit"], input[type="reset"] {
+        width: 100%; /* Hacer que los botones ocupen todo el ancho */
+        padding: 12px; /* Aumentar el padding de los botones */
+        font-size: 18px; /* Aumentar el tamaño de la fuente de los botones */
+        margin-top: 12px; /* Espacio entre botones */
+    }
+
+    footer {
+        padding: 10px;
+        text-align: center;
+        margin-left: 10px; /* Margen izquierdo */
+        margin-right: 10px; /* Margen derecho */
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Base Styles */
+    body {
+        font-size: 16px; /* Ajustar tamaño de fuente */
+    }
+
+    /* Layout Components */
+    header, main, footer {
+        margin: 10px; /* Reducir márgenes */
+    }
+
+    nav {
+        padding: 10px 20px; /* Ajustar el padding */
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center; /* Alinear al centro */
+    }
+
+    nav a {
+        margin: 5px 0; /* Espaciado entre links */
+    }
+
+    main {
+        padding: 15px; /* Ajustar padding */
+    }
+
+    /* Grid Photos */
+    .grid-photos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajustar la cuadrícula */
+    }
+
+    #video iframe {
+        width: 90%; /* Hacer que el iframe sea más ancho */
+    }
+
+    /* Form Elements */
+    input {
+        font-size: 14px; /* Ajustar tamaño de fuente de los inputs */
+    }
+
+    label {
+        font-size: 14px; /* Ajustar tamaño de la fuente de las etiquetas */
+    }
+
+    li {
+        font-size: 1.5em; /* Reducir tamaño de los elementos de la lista */
+    }
+
+    /* Table Styles */
+    th, td {
+        font-size: 12px; /* Reducir tamaño de la fuente en la tabla */
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 14px; /* Ajustar tamaño de fuente en el footer */
+    }
+}
+
+@media (min-width: 1600px) {
+    /* Layout Components */
+    header, footer {
+        /* Maintain max-width */
+        max-width: 100%; /* Make full width for large screens */
+        padding: 0 40px; /* Add some horizontal padding */
+    }
+
+    /* Main Content with Grid Layout */
+    main {
+        display: grid; /* Apply grid display */
+        grid-template-columns: repeat(4, 1fr); /* Four equal columns for wide screens */
+        gap: 20px; /* Space between grid items */
+        padding: 20px; /* Padding around the main content */
+    }
+
+    /* Form Section */
+    form {
+        grid-column: span 4; /* Make form span all columns */
+        padding: 20px; /* Maintain padding */
+        background-color: #EDEAD0; /* Keep background color */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
+
+    /* Adjust typography for better readability */
+    h2 {
+        grid-column: span 4; /* Make heading span all columns */
+        text-align: center; /* Center heading */
+        font-size: 2.5em; /* Larger font for headings */
+        margin-bottom: 20px; /* Space below heading */
+    }
+
+    /* List Items */
+    li {
+        font-size: 1.8em; /* Slightly larger font for list items */
+    }
+
+    /* Table Styles */
+    table {
+        width: 100%; /* Full width table */
+    }
+
+    th, td {
+        padding: 15px; /* More padding for cells */
+        font-size: 14px; /* Adjust font size in tables */
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1.2em; /* Larger font size */
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    body {
+        font-size: 18px; /* Adjust font size for better readability */
+    }
+
+    header img {
+        height: 400px; /* Increase height of the header image */
+    }
+
+    .nav-container {
+        padding: 20px 100px; /* More padding for larger screens */
+    }
+
+    nav {
+        padding: 20px 80px; /* Adjust padding for navigation */
+    }
+
+    nav a {
+        font-size: 18px; /* Increase font size for navigation links */
+    }
+
+    main {
+        padding: 40px; /* More padding for the main content */
+        display: grid; /* Use grid layout */
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 40px; /* Space between sections */
+    }
+
+    #fotografias {
+        display: grid; /* Use grid for photographs */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+        gap: 20px; /* Gap between images */
+    }
+
+    #fotografias img {
+        max-height: 200px; /* Limit the height of images */
+        object-fit: cover; /* Maintain aspect ratio without stretching */
+        border-radius: 10px; /* Optional: round corners */
+    }
+
+    #video {
+        grid-column: 1; /* Ensures video section spans the full width */
+        text-align: center; /* Center video content */
+    }
+
+    #video iframe {
+        width: 80%; /* Increase video width */
+        max-width: 800px; /* Set max width for the video */
+    }
+
+    iframe[name="photoFrame"] {
+        width: 800px; /* Increase iframe width for better view */
+        height: 500px; /* Increase iframe height */
+    }
+
+    #poema pre {
+        font-size: 18px; /* Larger font size for poem text */
+        padding: 30px; /* More padding around the poem */
+    }
+}

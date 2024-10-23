@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt">
     <head>
+        <style> * {box-sizing: border-box; } </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure this tag is present -->
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="responsive.css">
         <meta charset="UTF-8">
         <title>Cidade</title>
     </head>
@@ -60,11 +63,13 @@
         
                 <!-- Service Level -->
                 <label for="service">Which service do you prefer for your trip:</label><br>
-                <input type="radio" id="basic" name="service" value="basic" required>
-                <label for="basic">Basic</label><br>
-                <input type="radio" id="premium" name="service" value="premium">
-                <label for="premium">Premium</label><br><br>
-        
+                <div class="service-options">
+                    <input type="radio" id="basic" name="service" value="basic" required>
+                    <label for="basic">Basic</label><br>
+                    <input type="radio" id="premium" name="service" value="premium">
+                    <label for="premium">Premium</label><br><br
+                </div>
+
                 <!-- Special Requests -->
                 <label for="specialRequests">Special Requests:</label><br>
                 <textarea id="specialRequests" name="specialRequests" placeholder="Describe any special requests..." rows="4" cols="50"></textarea><br><br>
@@ -80,7 +85,12 @@
         </main>
 
         <aside>
-
+            <h3>Tips and tricks for your travel</h3>
+            <ul>
+                <li>Don't die</li>
+                <li>Take the wallet</li>
+                <li>Don't be robbed</li>
+            </ul>
         </aside>
 
         <footer>

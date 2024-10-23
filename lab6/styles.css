@@ -1,264 +1,370 @@
-/* LAB 4 */
-/* Part 1: Estilizar as estruturas das paginas */
+/* LAB 4 & 5 - Reorganized by property categories */
+
+/* Base Styles */
 body {
+    /* Positioning */
+    position: relative;
+
+    /* Box Model */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Fondo general que resalta las secciones */
+
+    /* Typography */
     font-family: Arial, sans-serif;
+
+    /* Colors & Background */
+    background-color: #f4f4f4;
 }
 
+/* Layout Components */
 header, main, footer {
-    margin: 20px auto; /* Espaciado alrededor de cada sección */
-    border-radius: 15px; /* Bordes redondeados para todas las secciones */
-    background-color: white; /* Fondo blanco para el contenido */
-    max-width: 1200px; /* Anchura máxima de las secciones */
-    overflow: hidden; /* Asegura que las imágenes y otros contenidos respeten los bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar sensación de profundidad */
+    /* Positioning */
+    position: relative;
+
+    /* Box Model */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+
+    /* Colors & Background */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    text-align: center; 
-    /* Mayus everything - Lab 5 */
-    text-transform: uppercase;
-    background-color: #3AB795;
+    /* Box Model */
     margin: 0;
     padding: 20px;
-    color: white;
-    font-family: Arial, sans-serif;
-    border-top-left-radius: 15px; 
+    border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+
+    /* Typography */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* Colors & Background */
+    color: white;
+    background-color: #3AB795;
 }
+
+/* Navigation Styles */
 .nav-container {
+    /* Positioning */
     display: flex;
+
+    /* Other Layout Properties */
     justify-content: center;
     align-items: center;
 }
 
 nav {
+    /* Positioning */
     display: flex;
-    justify-content: space-between;
-    
-    background-color: #31493c;
+    position: relative;
+
+    /* Box Model */
+    width: 100%;
+    max-width: 1200px;
     padding: 10px 50px;
+    border-radius: 15px;
     box-sizing: border-box;
 
-    max-width: 1200px; /* Anchura máxima de las secciones */
-    width: 100%; /* Asegura que el nav ocupe todo el ancho disponible hasta el max-width */
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar sensación de profundidad */
+    /* Other Layout Properties */
+    justify-content: space-between;
 
+    /* Colors & Background */
+    background-color: #31493c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+nav a {
+    /* Typography */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+
+    /* Colors & Background */
+    color: white;
+}
+
+nav a:hover {
+    /* Colors & Background */
+    color: #ffcf56;
+}
+
+/* Header Image */
 header img {
+    /* Positioning */
     display: block;
+
+    /* Box Model */
     width: 100%;
     height: auto;
 }
 
+/* Main Content */
 main {
-    background-color: #EDEAD0;
+    /* Box Model */
     padding: 20px;
     box-sizing: border-box;
+
+    /* Colors & Background */
+    background-color: #EDEAD0;
 }
 
+/* Footer */
 footer {
-    text-align: center;
-    background-color: #31493c;
+    /* Box Model */
     padding: 10px;
-    color: white;
-    font-family: Arial, sans-serif;
-    border-bottom-left-radius: 15px; /* bordes inferiores redondeados */
+    border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+
+    /* Typography */
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    /* Colors & Background */
+    color: white;
+    background-color: #31493c;
 }
 
 footer p {
+    /* Box Model */
     margin: 0;
 }
 
-/* Part 2: Estilizar links */
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ffcf56;
-}
-
-/* Part 3: Estilizar pagina multimedia */
-
+/* Multimedia Page Styles */
 #fotografias h3, #video h3, #poema h3 {
-    color: #4CAF50;
-    font-size: 24px;
-    border-bottom: 2px solid #4CAF50;
+    /* Box Model */
     padding-bottom: 10px;
     margin-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+
+    /* Typography */
+    font-size: 24px;
+
+    /* Colors & Background */
+    color: #4CAF50;
 }
 
 iframe[name="photoFrame"] {
+    /* Positioning */
     display: block;
+
+    /* Box Model */
     margin: 30px auto;
     border: 2px solid #4CAF50;
     border-radius: 10px;
 }
 
 .grid-photos {
+    /* Positioning */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* I got it from internet I don't know what it does */
-    gap: 20px;
+
+    /* Box Model */
     margin: 20px 0;
+    gap: 20px;
+
+    /* Other Layout Properties */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    transition: color 0.3s ease;
 }
 
 .grid-photos a {
+    /* Positioning */
+    display: block;
+
+    /* Typography */
     text-align: center;
     text-decoration: none;
+
+    /* Colors & Background */
     color: black;
-}
 
-.grid-photos img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-/* Response to big*/
-.grid-photos img:hover {
-    transform: scale(1.05);
-}
-
-/* Lab 5 - Cursor */
-.grid-photos a {
+    /* Other Layout Properties */
     cursor: zoom-in;
 }
 
+.grid-photos img {
+    /* Box Model */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+    /* Other Layout Properties */
+    transition: transform 0.3s ease;
+}
+
+.grid-photos img:hover {
+    /* Other Layout Properties */
+    transform: scale(1.05);
+}
+
+/* Video Section */
 #video {
-    text-align: center;
+    /* Box Model */
     margin: 40px 0;
+
+    /* Typography */
+    text-align: center;
 }
 
 #video iframe {
-    width: 70%;  /* Make the video RESPONSIVE */
-    border: 2px solid #4CAF50; 
-    border-radius: 10px;  /* redondear las esquinas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* sombra */
-    transition: transform 0.3s ease;  /* hover effect */
+    /* Box Model */
+    width: 70%;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+
+    /* Colors & Background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Other Layout Properties */
+    transition: transform 0.3s ease;
 }
 
+/* Poem Section */
 #poema p {
-    color: #4CAF50;
+    /* Typography */
     font-size: 16px;
+
+    /* Colors & Background */
+    color: #4CAF50;
 }
 
 #poema pre {
-    background-color: #f9f9f9; /* Fondo de la caja */
-    border: 2px solid #4CAF50; /* Bordes */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interior */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    margin: 20px 0; /* Margen vertical */
-    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    /* Box Model */
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+
+    /* Typography */
+    font-family: 'Playfair Display', serif;
     font-style: italic;
     line-height: 1.8;
-    text-align: justify;
-    text-align: center; /* Centrar el texto */
+    text-align: center;
+
+    /* Colors & Background */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Part 4: Estilizar Label & Input */
+/* Form Elements */
+label, input {
+    /* Positioning */
+    display: block;
+
+    /* Box Model */
+    margin-bottom: 10px;
+}
+
 label {
+    /* Typography */
     font-size: small;
 }
 
 input {
+    /* Typography */
     font-size: medium;
 }
 
-label, input {
-    display: block;
-    margin-bottom: 10px;
-}
-
 .inline-question {
-    display: flex; /* usamos flex para alinear horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    margin-bottom: 10px; /* Espacio entre preguntas */
+    /* Positioning */
+    display: flex;
+
+    /* Box Model */
+    margin-bottom: 10px;
+
+    /* Other Layout Properties */
+    align-items: center;
 }
 
 .inline-question label {
-    margin-right: 10px; /* Espacio a la derecha de la etiqueta */
+    /* Box Model */
+    margin-right: 10px;
 }
 
 .inline-question input {
-    margin-right: 5px; /* Espacio a la derecha de las entradas */
+    /* Box Model */
+    margin-right: 5px;
 }
 
-/* LAB 5 */
-
+/* List Styles */
 li {
+    /* Typography */
     font-size: 2em;
 }
-li:nth-child(2n+1) { /* Cores dos items das listas */
+
+li:nth-child(2n+1) {
+    /* Colors & Background */
     color: lightseagreen;
 }
 
-ul { /* Nas listas não ordenadas, altere o icon */
+ul {
+    /* Other Layout Properties */
     list-style: circle;
 }
 
-ol { /* Nas listas ordenadas, altere a numeração usada */
+ol {
+    /* Other Layout Properties */
     list-style-type: upper-roman;
 }
 
-/* Estilo das Tabelas */
+/* Table Styles */
 table {
+    /* Box Model */
     width: 100%;
+
+    /* Other Layout Properties */
     border-collapse: collapse;
 }
 
 th, td {
+    /* Box Model */
     padding: 10px;
+    border: 1px solid #ccc;
+
+    /* Typography */
     font-size: 13px;
     text-align: center;
-    border: 1px solid #ccc;
 }
 
-/* Estilo para o cabeçalho da tabela */
-th:nth-child(1){
+th:nth-child(1) {
+    /* Typography */
+    font-weight: bold;
+
+    /* Colors & Background */
     background-color: #2f4f66;
     color: white;
-    font-weight: bold;
 }
 
-th:nth-child(2){
+th:nth-child(2) {
+    /* Typography */
+    font-weight: bold;
+
+    /* Colors & Background */
     background-color: #8d8d8d;
     color: white;
-    font-weight: bold;
 }
 
-/* Lineas impares izquierda */
 tr:nth-child(odd) td:nth-child(1) {
-    background-color: #2f4f66; /* Cor azul-escuro */
+    /* Colors & Background */
+    background-color: #2f4f66;
     color: white;
 }
 
-/* Lineas impares derecha */
 tr:nth-child(odd) td:nth-child(2) {
-    background-color: #8d8d8d; /* Cor cinza */
+    /* Colors & Background */
+    background-color: #8d8d8d;
     color: white;
 }
 
-/* Lineas pares */
-tr:nth-child(even) td:nth-child(1) {
-    background-color: white; /* Blanco para la izquierda */
-    color: black; /* Texto en negro */
-}
-
+tr:nth-child(even) td:nth-child(1),
 tr:nth-child(even) td:nth-child(2) {
-    background-color: white; /* Blanco para la derecha */
-    color: black; /* Texto en negro */
+    /* Colors & Background */
+    background-color: white;
+    color: black;
 }
-
