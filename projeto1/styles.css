@@ -1,0 +1,113 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+header {
+    background-color: #cccccc;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 24px;
+}
+
+header nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-template-rows: auto auto; /* Dos filas */
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+
+    grid-template-areas:
+        "interfaces imagen"
+        "introducao laboratorios";
+}
+
+.div-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#interfaces {
+    grid-area: interfaces;
+}
+
+#introducao {
+    grid-area: introducao;
+}
+
+#laboratorios {
+    grid-area: laboratorios;
+}
+
+.image-container {
+    grid-area: imagen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos de la imagen */
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilo del bloque de laboratorios */
+.lab-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lab-container div {
+    background-color: dimgray;
+}
+
+.lab-container a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px; /* Ajustar tamaño de los enlaces de laboratorio */
+}
+
+.lab-container a:hover {
+    background-color: black;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ccc;
+    margin-top: 20px;
+}
