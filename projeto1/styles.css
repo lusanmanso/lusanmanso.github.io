@@ -11,6 +11,7 @@ body {
     color: #333;
 }
 
+/* Estilos del Header */
 header {
     background-color: #cccccc;
     padding: 20px;
@@ -32,14 +33,14 @@ header nav a {
     border-radius: 5px;
 }
 
+/* Estilo del contenedor principal */
 main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    grid-template-rows: auto auto; /* Dos filas */
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Mínimo 300px para ancho fijo en cajas */
     grid-gap: 20px;
     padding: 20px;
     max-width: 1200px;
-
+    margin: 0 auto;
     grid-template-areas:
         "interfaces imagen"
         "introducao laboratorios";
@@ -50,6 +51,7 @@ main {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Ancho mínimo fijo para mantener la caja */
 }
 
 #interfaces {
@@ -71,37 +73,31 @@ main {
     align-items: center;
 }
 
-/* Estilos de la imagen */
 .image-container img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-/* Estilo del bloque de laboratorios */
 .lab-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.lab-container div {
-    background-color: dimgray;
-}
-
 .lab-container a {
     text-decoration: none;
-    color: white;
+    color: gray;
     font-weight: bold;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
-    width: 100px; /* Ajustar tamaño de los enlaces de laboratorio */
+    width: 100px;
 }
 
 .lab-container a:hover {
-    background-color: black;
+    background-color: #e0e0e0;
 }
 
 /* Footer */
@@ -110,4 +106,19 @@ footer {
     padding: 20px;
     background-color: #ccc;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Poner todo en una columna en pantallas pequeñas */
+        grid-template-areas:
+            "interfaces"
+            "imagen"
+            "introducao"
+            "laboratorios";
+    }
+
+    .div-container, .image-container {
+        min-width: 100%; /* Las cajas ocuparán todo el ancho disponible */
+    }
 }
