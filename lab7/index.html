@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>JavaScript</title>
+  </head>
+  <body>
+    <!--Start of the list-->
+    <ol>
+      <!--onmouseover-->
+      <li>
+        <p id="passar" onmouseover="passar()">Passa por aqui!</p>
+      </li>
+      <!--recolor-->
+      <li>
+        <p>Pinta-me!</p>
+        <button onclick="">Red</button>
+        <button onclick="">Green</button>
+        <button onclick="">Blue</button>
+      </li>
+      <!--textbox-->
+      <li>Experimenta escrever...</li>
+      <!--bodycolor-->
+      <li>Escolga uma cor em inglês: </li>
+      <li></li>
+      <!--counter-->
+      <li>
+        <button onclick="count()">Conta!</button>
+      </li>
+    </ol>
+
+    <script>
+      const frase = document.querySelector("#passar")
+      function passar() {
+        frase.innerHTML="Obrigado por passares";
+      }
+
+      function count() {
+
+      }
+    </script>
+  </body>
+</html>
