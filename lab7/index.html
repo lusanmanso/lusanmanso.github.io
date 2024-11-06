@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
       <meta charset="UTF-8">
       <title>JavaScript</title>
@@ -7,22 +7,30 @@
   <body>
     <!--Start of the list-->
     <ol>
-      <!--onmouseover-->
+      <!--mouseover-->
       <li>
-        <p id="passar" onmouseover="passar()">Passa por aqui!</p>
+        <p id="hovering">Passa por aqui!</p>
       </li>
       <!--recolor-->
       <li>
-        <p>Pinta-me!</p>
-        <button onclick="">Red</button>
-        <button onclick="">Green</button>
-        <button onclick="">Blue</button>
+        <p id="txt-color">Pinta-me!
+          <button class="color-button" data-color="red">Red</button>
+          <button class="color-button" data-color="green">Green</button>
+          <button class="color-button" data-color="blue">Blue</button>
+        </p>
       </li>
       <!--textbox-->
-      <li>Experimenta escrever...</li>
+      <li>Experimenta escrever...
+        <input type="text" id="bg-color">
+      </li>
       <!--bodycolor-->
-      <li>Escolga uma cor em inglês: </li>
-      <li></li>
+      <li>
+        <p>
+          <label>Escolha uma cor em inglês:</label>
+          <input type="text">
+          <button>Submeter</button>
+        </p>
+      </li>
       <!--counter-->
       <li>
         <button onclick="count()">Conta!</button>
@@ -30,14 +38,33 @@
     </ol>
 
     <script>
-      const frase = document.querySelector("#passar")
-      function passar() {
-        frase.innerHTML="Obrigado por passares";
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+        const frase = document.querySelector("#hovering")
+        const fraseOg = frase.innerHTML;
 
-      function count() {
+        // Mouseover
+        frase.addEventListener("mouseover", function() {
+          frase.innerHTML="Obrigado por passares";
+        });
 
-      }
+        // Mouseout
+        frase.addEventListener("mouseout", function() {
+          frase.innerHTML = fraseOg;
+        });
+      });
+
+      // Change color-text
+      const txtColor = document.getElementById("txt-color");
+      // Select all the color-button classes
+      const colorButtons = document.querySelectorAll(".color-button");
+
+      colorButtons.forEach(button => {
+        button.addEventListener("click", function() {
+          const color = button.getAttribute("data-color");
+          txtColor.style.color = color;
+        });
+      });
+
     </script>
   </body>
 </html>
