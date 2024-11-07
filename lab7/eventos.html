@@ -2,15 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript Events</title>
+    <title>JavaScript Library</title>
 </head>
 <body>
+    <!--Nav-->
     <nav>
+        <a href="lusanmanso.github.io\index.html">Landing Page</a>
         <a href="index.html">Index</a>
         <a href="eventos.html">Events</a>
     </nav>
+    <!--Main-->
+    <main>
+        <div class="container">
+            <h1>DigiBrary</h1>
+            <p>
+                Welcome to your online book collection.
+                Explore, agreggate & administer     your favourite books
+            </p>
+        </div>
 
+        <div class="book-list">
+            <h2>Book List</h2>
+            <ul id="book-list">
+                <li data-book-id="1">The Metamorphosis</li>
+                <li data-book-id="2">1984</li>
+                <li data-book-id="3">Handmaid's Tale</li>
+                <li data-book-id="4">Anna Karenina</li>
+                <li data-book-id="5">No Longer Human</li>
+            </ul>
+        </div>
 
+        <div class="book-details">
+            <h2>Book Details</h2>
+            <p id="book-title">Select a book to see its details</p>
+            <p>
+                <b>Author:</b>
+                <span id="book-author">---</span>
+            </p>
+            <p>
+                <b>Original Publication:</b>
+                <span id="book-year">---</span>
+            </p>
+            <p>
+                <b>Summary:</b>
+                <span id="book-summary">---</span>
+            </p>
+        </div>
+    </main>
 
+    <script>
+        // Object with book details
+        const books = {
+            1: {
+                title: "The Metamorphosis",
+                author: "Franz Kafka",
+                year: "1915",
+                summary: "A man wakes up one morning to find himself transformed into a giant insect."
+            },
+            2: {
+                title: "1984",
+                author: "George Orwell",
+                year: "1949",
+                summary: "A dystopian novel about totalitarianism and surveillance."
+            },
+            3: {
+                title: "Handmaid's Tale",
+                author: "Margaret Atwood",
+                year: "1985",
+                summary: "In a totalitarian society, women are forced into servitude."
+            },
+            4: {
+                title: "Anna Karenina",
+                author: "Leo Tolstoy",
+                year: "1877",
+                summary: "A story of love, betrayal, and society in Imperial Russia."
+            },
+            5: {
+                title: "No Longer Human",
+                author: "Osamu Dazai",
+                year: "1948",
+                summary: "A deeply introspective novel about alienation and identity."
+            }
+        };
+
+        document.querySelectorAll("#book-list li").forEach(item => {
+            item.addEventListener("click", function() {
+                const bookID = this.getAttribute("data-book-id");
+                const book = books[bookID];
+
+                if (book) {
+                    document.getElementById("book-title").textContent = book.title;
+                    document.getElementById("book-author").textContent = book.author;
+                    document.getElementById("book-year").textContent = book.year;
+                    document.getElementById("book-summary").textContent = book.summary;
+                }
+            });
+
+        });
+    </script>
 </body>
 </html>
