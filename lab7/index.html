@@ -1,70 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-      <meta charset="UTF-8">
-      <title>JavaScript</title>
-  </head>
-  <body>
-    <!--Start of the list-->
-    <ol>
-      <!--mouseover-->
-      <li>
-        <p id="hovering">Passa por aqui!</p>
-      </li>
-      <!--recolor-->
-      <li>
-        <p id="txt-color">Pinta-me!
-          <button class="color-button" data-color="red">Red</button>
-          <button class="color-button" data-color="green">Green</button>
-          <button class="color-button" data-color="blue">Blue</button>
-        </p>
-      </li>
-      <!--textbox-->
-      <li>Experimenta escrever...
-        <input type="text" id="bg-color">
-      </li>
-      <!--bodycolor-->
-      <li>
-        <p>
-          <label>Escolha uma cor em inglês:</label>
-          <input type="text">
-          <button>Submeter</button>
-        </p>
-      </li>
-      <!--counter-->
-      <li>
-        <button onclick="count()">Conta!</button>
-      </li>
-    </ol>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript</title>
+</head>
+<body>
+<!--Start of the list-->
+<ol>
+  <!--mouseover-->
+  <li>
+    <p id="hovering">Passa por aqui!</p>
+  </li>
+  <!--recolor-->
+  <li>
+    <p id="txt-color">Pinta-me!
+      <button class="color-button" data-color="red">Red</button>
+      <button class="color-button" data-color="green">Green</button>
+      <button class="color-button" data-color="blue">Blue</button>
+    </p>
+  </li>
+  <!--textbox-->
+  <li>Experimenta escrever...
+    <input type="text" id="color-textbox">
+  </li>
+  <!--bodycolor-->
+  <li>
+    <p>
+      <label>Escolha uma cor em inglês:</label>
+      <input type="text" id="bg-color">
+      <button id="submit-color">Submeter</button>
+    </p>
+  </li>
+  <!--counter-->
+  <li>
+    <button id="count-button">Conta!</button>
+  </li>
+</ol>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const frase = document.querySelector("#hovering")
-        const fraseOg = frase.innerHTML;
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mouseover
+    const frase = document.querySelector("#hovering")
+    const fraseOg = frase.innerHTML;
 
-        // Mouseover
-        frase.addEventListener("mouseover", function() {
-          frase.innerHTML="Obrigado por passares";
-        });
+    frase.addEventListener("mouseover", function() {
+      frase.innerHTML="Obrigado por passares";
+    });
 
-        // Mouseout
-        frase.addEventListener("mouseout", function() {
-          frase.innerHTML = fraseOg;
-        });
-      });
+    // Mouseout
+    frase.addEventListener("mouseout", function() {
+      frase.innerHTML = fraseOg;
+    });
 
-      // Change color-text
-      const txtColor = document.getElementById("txt-color");
-      // Select all the color-button classes
-      const colorButtons = document.querySelectorAll(".color-button");
+    // Recolor
+    const textbox = document.getElementById("color-textbox");
+    const colors = ["#FFD700", "#ADFF2F", "#00CED1", "#FF69B4"];
+    let colorIndex = 0; // índice inicial del color
 
-      colorButtons.forEach(button => {
-        button.addEventListener("click", function() {
-          const color = button.getAttribute("data-color");
-          txtColor.style.color = color;
-        });
-      });
+    textbox.addEventListener("input", function () {
+      textbox.style.background = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+    });
+  });
 
-    </script>
-  </body>
+  // Textbox
+  const txtColor = document.getElementById("txt-color");
+  const colorButtons = document.querySelectorAll(".color-button");
+
+  colorButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      const color = button.getAttribute("data-color");
+      txtColor.style.color = color;
+    });
+  });
+
+  // Bodycolor
+  const bgColor = document.getElementById("bg-color");
+  const submitButton = document.getElementById("submit-color");
+
+  submitButton.addEventListener("click", function() {
+    const color = bgColor.value;
+    document.body.style.backgroundColor = color;
+  });
+
+  // Counter
+  let counter = 0;
+  const counterDisplay = document.createElement("p");
+  document.body.appendChild(counterDisplay);
+  const countButton = document.getElementById("count-button");
+
+  countButton.addEventListener("click", function() {
+    counter++;
+    counterDisplay.textContent = counter;
+  });
+</script>
+</body>
 </html>
