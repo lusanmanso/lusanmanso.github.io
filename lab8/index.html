@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+<body>
+  <!--Nav-->
+  <nav>
+    <a href="lusanmanso.github.io\index.html">Landing Page</a>
+    <a href="index.html">Index</a>
+    <a href="eventos.html">Events</a>
+  </nav>
+  <!--Start of the list-->
+  <ol>
+    <!--mouseover-->
+    <li>
+      <p id="hovering">Passa por aqui!</p>
+    </li>
+    <!--recolor-->
+    <li>
+      <p id="txt-color">Pinta-me!
+        <button class="color-button" data-color="red">Red</button>
+        <button class="color-button" data-color="green">Green</button>
+        <button class="color-button" data-color="blue">Blue</button>
+      </p>
+    </li>
+    <!--textbox-->
+    <li>Experimenta escrever...
+      <label for="color-textbox"></label><input type="text" id="color-textbox">
+    </li>
+    <!--bodycolor-->
+    <li>
+      <p>
+        <label>Escolha uma cor em inglês:</label>
+        <label for="bg-color"></label><input type="text" id="bg-color">
+        <button id="submit-color">Submeter</button>
+      </p>
+    </li>
+    <!--counter-->
+    <li>
+      <button id="count-button">Conta!</button>
+    </li>
+  </ol>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mouseover
+      const frase = document.querySelector("#hovering")
+      const fraseOg = frase.innerHTML;
+
+      frase.addEventListener("mouseover", function() {
+        frase.innerHTML="Obrigado por passares";
+      });
+
+      // Mouseout
+      frase.addEventListener("mouseout", function() {
+        frase.innerHTML = fraseOg;
+      });
+
+      // Recolor
+      const textbox = document.getElementById("color-textbox");
+      const colors = ["#FFD700", "#ADFF2F", "#00CED1", "#FF69B4"];
+      let colorIndex = 0; // índice inicial del color
+
+      textbox.addEventListener("input", function () {
+        textbox.style.background = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+      });
+    });
+
+    // Textbox
+    const txtColor = document.getElementById("txt-color");
+    const colorButtons = document.querySelectorAll(".color-button");
+
+    colorButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        txtColor.style.color = button.getAttribute("data-color");
+      });
+    });
+
+    // Bodycolor
+    const bgColor = document.getElementById("bg-color");
+    const submitButton = document.getElementById("submit-color");
+
+    submitButton.addEventListener("click", function() {
+      document.body.style.backgroundColor = bgColor.value;
+    });
+
+    // Counter
+    let counter = 0;
+    const counterDisplay = document.createElement("p");
+    document.body.appendChild(counterDisplay);
+    const countButton = document.getElementById("count-button");
+
+    countButton.addEventListener("click", function() {
+      counter++;
+      counterDisplay.textContent = counter;
+    });
+  </script>
+</body>
+</html>
