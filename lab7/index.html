@@ -14,11 +14,11 @@
   </nav>
   <!--Start of the list-->
   <ol>
-    <!--mouseover-->
+    <!--1. mouseover-->
     <li>
       <p id="hovering">Passa por aqui!</p>
     </li>
-    <!--recolor-->
+    <!--2. recolor-->
     <li>
       <p id="txt-color">Pinta-me!
         <button class="color-button" data-color="red">Red</button>
@@ -26,21 +26,29 @@
         <button class="color-button" data-color="blue">Blue</button>
       </p>
     </li>
-    <!--textbox-->
+    <!--3. textbox-->
     <li>Experimenta escrever...
       <label for="color-textbox"></label><input type="text" id="color-textbox">
     </li>
-    <!--bodycolor-->
+    <!--4. bodycolor-->
     <li>
       <p>
         <label>Escolha uma cor em inglês:</label>
-        <label for="bg-color"></label><input type="text" id="bg-color">
-        <button id="submit-color">Submeter</button>
+        <label for="bg-color"></label><select id="bg-color">
+          <option value="white">White</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+        </select>
       </p>
     </li>
-    <!--counter-->
+    <!--5. counter-->
     <li>
       <button id="count-button">Conta!</button>
+    </li>
+
+    <!--6. dados pessoales-->
+    <li>
+
     </li>
   </ol>
 
@@ -81,12 +89,9 @@
     });
 
     // Bodycolor
-    const bgColor = document.getElementById("bg-color");
-    const submitButton = document.getElementById("submit-color");
-
-    submitButton.addEventListener("click", function() {
-      document.body.style.backgroundColor = bgColor.value;
-    });
+    document.querySelector('select').onchange = function() {
+      document.querySelector('body').style.background = this.value;
+    }
 
     // Counter
     let counter = 0;

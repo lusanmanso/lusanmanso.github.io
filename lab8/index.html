@@ -8,7 +8,7 @@
 <body>
   <!--Nav-->
   <nav>
-    <a href="lusanmanso.github.io\index.html">Landing Page</a>
+    <a href="index.html">Landing Page</a>
     <a href="index.html">Index</a>
     <a href="eventos.html">Events</a>
   </nav>
@@ -34,8 +34,13 @@
     <li>
       <p>
         <label>Escolha uma cor em inglês:</label>
-        <label for="bg-color"></label><input type="text" id="bg-color">
-        <button id="submit-color">Submeter</button>
+        <label for="bg-color"></label><select id="bg-color">
+          <option value="">Select a color</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="yellow">Yellow</option>
+        </select>
       </p>
     </li>
     <!--counter-->
@@ -76,16 +81,14 @@
 
     colorButtons.forEach(button => {
       button.addEventListener("click", function() {
-        txtColor.style.color = button.getAttribute("data-color");
+        txtColor.style.color = button.dataset.color;
       });
     });
 
     // Bodycolor
     const bgColor = document.getElementById("bg-color");
-    const submitButton = document.getElementById("submit-color");
-
-    submitButton.addEventListener("click", function() {
-      document.body.style.backgroundColor = bgColor.value;
+    bgColor.addEventListener("change", function() {
+      document.body.style.backgroundColor = this.value;
     });
 
     // Counter
