@@ -143,11 +143,14 @@
     }
 
     // Automatic counter
-    function countAutomatic() {
+    let counter = 0;
 
+    function countAutomatic() {
+      counter++;
+      document.getElementById("automatic-counter-display").innerHTML = counter;
     }
 
-    setInterval(countAutomatic(), 1000);
+    setInterval(countAutomatic, 1000);
   </script>
 </body>
 </html>
