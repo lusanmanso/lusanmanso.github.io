@@ -14,11 +14,11 @@
   </nav>
   <!--Start of the list-->
   <ol>
-    <!--mouseover-->
+    <!--1. mouseover-->
     <li>
       <p id="hovering">Passa por aqui!</p>
     </li>
-    <!--recolor-->
+    <!--2. recolor-->
     <li>
       <p id="txt-color">Pinta-me!
         <button class="color-button" data-color="red">Red</button>
@@ -26,26 +26,44 @@
         <button class="color-button" data-color="blue">Blue</button>
       </p>
     </li>
-    <!--textbox-->
+    <!--3. textbox-->
     <li>Experimenta escrever...
       <label for="color-textbox"></label><input type="text" id="color-textbox">
     </li>
-    <!--bodycolor-->
+    <!--4. bodycolor-->
     <li>
       <p>
         <label>Escolha uma cor em inglês:</label>
         <label for="bg-color"></label><select id="bg-color">
           <option value="">Select a color</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-          <option value="blue">Blue</option>
-          <option value="yellow">Yellow</option>
+          <option value="lightgray">Gray</option>
+          <option value="lightsalmon">Orange</option>
+          <option value="lightblue">Blue</option>
         </select>
       </p>
     </li>
-    <!--counter-->
+    <!--5. counter-->
     <li>
       <button id="count-button">Conta!</button>
+      <span id="counter-display"></span>
+    </li>
+    <!--6. Nome e idade-->
+    <li>
+      <p>
+        <form id="user-form">
+          <label for="name-input">Name:</label>
+          <input type="text" id="name-input" required>
+          <label for="age-input">Age:</label>
+          <input type="number" id="age-input" required>
+          <button type="submit">Submit</button>
+        </form>
+      </p>
+    </li>
+    <span id="name-age"></span>
+    <!--7. Automatic count()-->
+    <li>
+      <p>Automatic counter:</p>
+      <span id="automatic-counter-display"></span>
     </li>
   </ol>
 
@@ -91,16 +109,45 @@
       document.body.style.backgroundColor = this.value;
     });
 
-    // Counter
-    let counter = 0;
-    const counterDisplay = document.createElement("p");
-    document.body.appendChild(counterDisplay);
-    const countButton = document.getElementById("count-button");
+    // Counter modificado para LocalStorage
+    if (!localStorage.getItem('counter')) {
+      localStorage.setItem('counter', 0);
+    } else {
+      document.getElementById("counter-display").innerHTML = localStorage.getItem('counter');
+    }
 
-    countButton.addEventListener("click", function() {
+    function count() {
+      let counter = localStorage.getItem('counter');
       counter++;
-      counterDisplay.textContent = counter;
+      document.getElementById("counter-display").innerHTML = counter;
+      localStorage.setItem('counter', counter);
+    }
+
+    const countButton = document.getElementById("count-button");
+    countButton.addEventListener("click", function() {
+      count();
     });
+
+    // Name and age
+    const form = document.getElementById("user-form");
+    const nameAgeDisplay = document.getElementById("name-age"); // El p que hay que cambiar
+
+    form.onsubmit = function(e) {
+      e.preventDefault(); // Previene que submission recargue la página
+
+      // Tomar los valores que he mteido ne el input
+      const name = document.getElementById("name-input").value;
+      const age = document.getElementById("age-input").value;
+
+      nameAgeDisplay.textContent = `Ola, o ${name} tem ${age}`;
+    }
+
+    // Automatic counter
+    function countAutomatic() {
+
+    }
+
+    setInterval(countAutomatic(), 1000);
   </script>
 </body>
 </html>
