@@ -34,21 +34,15 @@
     <li>
       <p>
         <label>Escolha uma cor em inglês:</label>
-        <label for="bg-color"></label><select id="bg-color">
-          <option value="white">White</option>
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-        </select>
+        <label>
+          <input type="text" id="bg-color">
+        </label>
+        <button id="submit-color">Submeter</button>
       </p>
     </li>
     <!--5. counter-->
     <li>
       <button id="count-button">Conta!</button>
-    </li>
-
-    <!--6. dados pessoales-->
-    <li>
-
     </li>
   </ol>
 
@@ -89,10 +83,12 @@
     });
 
     // Bodycolor
-    document.querySelector('select').onchange = function() {
-      document.querySelector('body').style.background = this.value;
-    }
+    const bgColor = document.getElementById("bg-color");
+    const submitButton = document.getElementById("submit-color");
 
+    submitButton.addEventListener("click", function() {
+      document.body.style.backgroundColor = bgColor.value;
+    });
     // Counter
     let counter = 0;
     const counterDisplay = document.createElement("p");
