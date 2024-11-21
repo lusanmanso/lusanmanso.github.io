@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    background-color: mediumvioletred;
+}
+
+header nav ul {
+    display: flex;
+
+    list-style-type: none;
+}
