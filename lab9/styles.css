@@ -9,19 +9,23 @@
 html {
     scroll-behavior: smooth;
 }
-
 header {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
+    position: fixed;
 
+    top: 0; /*LITERALMENTE LO ÚNICO QUE NECESITABA PARA QUE EL HEADER FUNCIONASE*/
+    width: 100%;
+    height: 80px;
     padding: 10px;
+
     background-color: mediumvioletred;
 }
 
 header h1 {
     font-size: 50px;
+    color: white;
 }
 
 header nav a {
@@ -35,23 +39,32 @@ header nav a {
     border-radius: 5px;
 }
 
-h2 {
-    padding: 10px;
+main {
+    margin-top: 80px;
     background-color: powderblue;
+
 }
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+/*GRID OF PRODUCTS*/
 
 #produtos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    padding: 10px;
-    gap: 10px;
+    margin: 20px 40px 40px 40px;
+    gap: 40px;
 
     background-color: powderblue;
 }
 
-.product {
+/*PRODUCT APPEARANCE*/
 
+.product {
     text-align: center;
 
     padding: 10px;
@@ -61,11 +74,17 @@ h2 {
 }
 
 .product h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
     padding: 10px;
 }
 
-#produtos img {
+.product-price {
+    display: inline;
+    font-size: 1.3em;
+    background-color: powderblue;
+    border-radius: 10px;
+}
 
+#produtos img {
     height: 200px;
 }
