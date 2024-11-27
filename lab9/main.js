@@ -30,7 +30,7 @@ function criarProduto(produto) {
     const description = document.createElement("p")
     description.textContent = produto.description;
 
-    newArticle.append(title, price, description);
+    newArticle.append(title, image, price, description);
 
     return newArticle;
 }
