@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     display: flex;
 
@@ -14,8 +18,25 @@ header {
     background-color: mediumvioletred;
 }
 
-header nav ul {
-    display: flex;
+header nav a {
 
-    list-style-type: none;
+    justify-content: space-evenly;
+
+    padding: 10px;
+    text-decoration: none;
+
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+#produtos {
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: aquamarine;
+}
+
+#produtos h2 {
+    padding: 10px;
 }
