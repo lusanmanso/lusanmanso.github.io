@@ -79,9 +79,20 @@ h2 {
 }
 
 .product-price {
-    display: inline;
     font-size: 1.3em;
-    background-color: powderblue;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.product-description {
+    margin: 0 auto;
+    width: 80%;
+
+    background-color: lightgray;
+    text-align: justify;
+
+    padding: 10px;
+    font-family: "Times New Roman", serif;
     border-radius: 10px;
 }
 
