@@ -1,4 +1,7 @@
-
+// localStorage caso ela não exista
+if (!localStorage.getItem('produtos-selecionados')) {
+    localStorage.setItem('produtos-selecionados', JSON.stringify([]));
+}
 // Crie um eventlistener que, quando tenha descarregado todo o DOM (evento JavaScript DOMContentLoaded),
 // chame uma função carregarProdutos(produtos) que recebe como argumento a variável produtos.
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,7 +39,45 @@ function criarProduto(produto) {
     description.className = "product-description";
     description.textContent = produto.description;
 
-    newArticle.append(title, image, price, description);
+    const shoppingButton = document.createElement("button");
+    shoppingButton.textContent = 'Adicionar ao cesto'
+
+    newArticle.append(title, image, price, description, shoppingButton);
+
+    // Nessa mesma função, crie um eventListener que é despoletado se o botao for clicado.
+    shoppingButton.addEventListener("click", () => {
+        // Obter lista do localStorage
+        let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'));
+
+        // adiciono o produto con todos os datos
+        produtosSelecionados.push({
+            id: produto.id,
+            title: produto.title,
+            price: produto.price,
+            image: produto.image,
+            description: produto.description,
+        });
+
+        // Atualizar localStorage
+        localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
+
+        // mensagem de confirmação
+        alert('"${produto.title}" was added');
+
+    })
 
     return newArticle;
+}
+
+function atualizaCesto() {
+    // Buscar a lista de produtos-selecionados no localStorage
+    let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'));
+    // Percorre a lista
+    produtosSelecionados.forEach(produto => {
+        criarProduto(produto);
+    })
+}
+
+function criaProdutoCesto(produto) {
+
 }
