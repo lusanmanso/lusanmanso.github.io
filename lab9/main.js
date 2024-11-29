@@ -6,6 +6,7 @@ if (!localStorage.getItem('produtos-selecionados')) {
 // chame uma função carregarProdutos(produtos) que recebe como argumento a variável produtos.
 document.addEventListener("DOMContentLoaded", () => {
     carregarProdutos(produtos);
+    atualizaCesto();
 })
 
 // Recebe lista de produtos
@@ -62,22 +63,64 @@ function criarProduto(produto) {
         localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
 
         // mensagem de confirmação
-        alert('"${produto.title}" was added');
+        alert(`"${produto.title}" was added`);
 
     })
 
     return newArticle;
 }
 
+// 1. Obtener lista de productos seleccionados
+// 2. criaProdutoCesto() para crear y añadir un <article> al contenedors
+// 3. Limpiar contenedor antes de actualizar (para evitar duplicados)
 function atualizaCesto() {
     // Buscar a lista de produtos-selecionados no localStorage
-    let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'));
+    const cesto = document.getElementById("cesto")
+    cesto.innerHTML = ""; // Limpia contenido previo
     // Percorre a lista
+    let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'))
+
     produtosSelecionados.forEach(produto => {
-        criarProduto(produto);
+        const cestoItem = criaProdutoCesto(produto)
+        cesto.append(cestoItem);
     })
+
 }
 
 function criaProdutoCesto(produto) {
 
+    // Crear un nuevo elemento pero va dentrodel cesto
+    const newArticleCart = document.createElement("article")
+    newArticleCart.className = "cart-product"
+
+    const title = document.createElement("h3")
+    title.textContent = produto.title;
+
+    const image = document.createElement("img")
+    image.src = produto.image;
+    image.alt = produto.title;
+
+    const price = document.createElement("p")
+    price.className = "product-price";
+    price.textContent = `Precio: ${produto.price}$`;
+
+    // Crear un boton con eventListener adecuado para eliminar
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = 'Eliminar do cesto'
+
+    // Atualizar lista productos-selecionados
+    deleteButton.addEventListener("click", () => {
+        let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'))
+
+        produtosSelecionados = produtosSelecionados.filter(p => p.id != produto.id) // Filtro
+        localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados)); // Actualizar localStorage
+
+        atualizaCesto()
+        location.reload();
+
+    })
+
+    newArticleCart.append(title, image, price, deleteButton)
+
+    return newArticleCart;
 }

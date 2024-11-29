@@ -99,3 +99,59 @@ h2 {
 #produtos img {
     height: 200px;
 }
+
+#produtos button {
+    margin-top: 15px;
+    padding: 10px;
+    color: white;
+    background-color: #0139ef;
+    border-radius: 5px;
+}
+
+/* THE SAME BUT IN CESTO */
+#cesto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 20px 40px 0 40px;
+    padding-bottom: 15px;
+    gap: 40px 20px; /* 40px entre filas, 20px entre columnas */
+
+}
+
+.cart-product {
+    text-align: center;
+
+    padding: 10px;
+
+    background-color: mediumvioletred;
+    border-radius: 10px;
+}
+
+.cart-product h3 {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+#cesto img {
+    height: 200px;
+}
+
+#cesto button {
+    margin-top: 15px;
+    padding: 10px;
+    color: blue;
+    background-color: white;
+    border-radius: 5px;
+}
+
+footer {
+    background: yellow;
+}
+
+footer p {
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px;
+}
