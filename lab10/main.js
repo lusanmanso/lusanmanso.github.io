@@ -1,3 +1,5 @@
+fetch("https://deisishop.pythonanywhere.com")
+
 // localStorage caso ela não exista
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
