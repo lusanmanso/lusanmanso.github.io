@@ -1,5 +1,48 @@
 fetch("https://deisishop.pythonanywhere.com")
+    .then(responde => responde.json())
+    .then(categories => {
+        console.log(categories);
+    });
 
+const categorySelect = document.getElementById("filter-select");
+
+fetch("https://deisishop.pythonanywhere.com/categories")
+    .then(response => response.json())
+    .then((categories) => {
+        let categoryList = categories;
+
+        categoryList.forEach(category => {
+            const optionElement = document.createElement("option");
+            // ? optionElement.value = category.name;
+            optionElement.innerText = category.name;
+            categoryList.append(optionElement);
+        });
+    });
+
+let productList = [];
+
+fetch("https://deisishop.pythonanywhere.com/products")
+    .then(respondse => response.json())
+    .then(products => {
+        productList = products;
+        console.log(productList);
+    });
+
+categorySelect.addEventListener("change", ()=> {
+    document.innerHTML = ''; // Clean the document
+    const selectedCategory = categorySelect.value;
+
+    const filteredProducts = productList.filter((product) => {
+        product.category.includes(selectedCategory);
+    })
+
+    filteredProducts.forEach(product => {
+        const newArticle = createProduct(product);
+        document.body.appendChild(newArticle);
+    });
+});
+
+/*
 // localStorage caso ela não exista
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
@@ -126,3 +169,4 @@ function criaProdutoCesto(produto) {
 
     return newArticleCart;
 }
+*/
