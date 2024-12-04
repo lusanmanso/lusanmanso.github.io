@@ -22,7 +22,7 @@ fetch("https://deisishop.pythonanywhere.com/categories")
 let productList = [];
 
 fetch("https://deisishop.pythonanywhere.com/products")
-    .then(respondse => response.json())
+    .then(response => response.json())
     .then(products => {
         productList = products;
         console.log(productList);
@@ -42,23 +42,23 @@ categorySelect.addEventListener("change", ()=> {
     });
 });
 
-/*
 // localStorage caso ela não exista
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
 }
+
 // Crie um eventlistener que, quando tenha descarregado todo o DOM (evento JavaScript DOMContentLoaded),
 // chame uma função carregarProdutos(produtos) que recebe como argumento a variável produtos.
 document.addEventListener("DOMContentLoaded", () => {
-    carregarProdutos(produtos);
+    carregarProdutos(productList);
     atualizaCesto();
 })
 
 // Recebe lista de produtos
-function carregarProdutos(produtos) {
+function carregarProdutos(productList) {
 
     const productContainer = document.getElementById("produtos");
-    produtos.forEach(produto => {
+    productList.forEach(produto => {
         const newArticle = criarProduto(produto);
         productContainer.appendChild(newArticle)
     });
@@ -169,4 +169,3 @@ function criaProdutoCesto(produto) {
 
     return newArticleCart;
 }
-*/
