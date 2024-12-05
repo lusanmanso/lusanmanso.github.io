@@ -17,9 +17,9 @@ categorySelect.addEventListener("change", () => {
 
 sortSelect.addEventListener("change", () => {
   const sortOrder = sortSelect.value; // 'asc' ou 'desc'
-
+  // 1. Alterar o seletor de ordenação para rating
   const sortedProducts = [...productList].sort((a, b) => {
-      return sortOrder === "asc" ? a.price - b.price : b.price - a.price;
+      return sortOrder === "asc" ? a.rating.rate - b.rating.rate : b.rating.rate - a.rating.rate;
   });
 
   carregarProdutos(sortedProducts);
