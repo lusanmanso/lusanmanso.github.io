@@ -1,6 +1,7 @@
 const categorySelect = document.getElementById("filter-select");
 const sortSelect = document.getElementById("sort-select");
 const searchInput = document.getElementById("search-input");
+const buyEverything = document.getElementById("everythingButton");
 let productList = [];
 
 // Manage the category change
@@ -28,11 +29,23 @@ sortSelect.addEventListener("change", () => {
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase();
 
+  // 3. Considerar também a descrição do produto
   const filteredProducts = productList.filter(product => {
-    return product.title.toLowerCase().includes(query);
+    return product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query);
   });
 
   carregarProdutos(filteredProducts);
+});
+
+// 2. Cria um botão que adiciona todos os produtos ao carrinho
+buyEverything.addEventListener("click", () => {
+
+  productList.forEach(product => {
+    criaProdutoCesto(product);
+  });
+
+  atualizaCesto();
+
 });
 
 // localStorage caso ela não exista
