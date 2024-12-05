@@ -28,7 +28,7 @@ header h1 {
     color: white;
 }
 
-header nav a {
+header nav a, #buyButton {
     justify-content: space-evenly;
 
     padding: 10px;
@@ -155,6 +155,13 @@ h2 {
     color: blue;
     background-color: white;
     border-radius: 5px;
+}
+
+#buyArea {
+    display: flex;
+    flex-direction: row; /* Opcional: Alinha os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
 }
 
 footer {

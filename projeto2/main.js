@@ -2,6 +2,7 @@ const categorySelect = document.getElementById("filter-select");
 const sortSelect = document.getElementById("sort-select");
 const searchInput = document.getElementById("search-input");
 const buyEverything = document.getElementById("everythingButton");
+const lessInfo = document.getElementById("lessInfo");
 let productList = [];
 
 // Manage the category change
@@ -38,13 +39,34 @@ searchInput.addEventListener("input", () => {
 });
 
 // 2. Cria um botão que adiciona todos os produtos ao carrinho
-buyEverything.addEventListener("click", () => {
+buyEverything.addEventListener("click", (productList) => {
+
+  let produtosSelecionados = JSON.parse(localStorage.getItem("produtos-selecionados"));
 
   productList.forEach(product => {
-    criaProdutoCesto(product);
+    if(!produtosSelecionados.some(p => p.id == product.id)) {
+      produtosSelecionados.push({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+        description: product.description
+      });
+    }
   });
 
+  localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
+
   atualizaCesto();
+
+  alert("Todos os produtos foram adicionados ao carrinho!");
+
+});
+
+// 4. Menos info que elimina la description
+lessInfo.addEventListener("click", () => {
+
+  
 
 });
 
