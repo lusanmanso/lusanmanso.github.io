@@ -1,4 +1,6 @@
 const categorySelect = document.getElementById("filter-select");
+const sortSelect = document.getElementById("sort-select");
+const searchInput = document.getElementById("search-input");
 let productList = [];
 
 // Manage the category change
@@ -11,6 +13,26 @@ categorySelect.addEventListener("change", () => {
     : productList; // Mostrar todos los productos si no hay categoría seleccionada
 
     carregarProdutos(filteredProducts); // Mostrar los productos filtrados
+});
+
+sortSelect.addEventListener("change", () => {
+  const sortOrder = sortSelect.value; // 'asc' ou 'desc'
+
+  const sortedProducts = [...productList].sort((a, b) => {
+      return sortOrder === "asc" ? a.price - b.price : b.price - a.price;
+  });
+
+  carregarProdutos(sortedProducts);
+});
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+
+  const filteredProducts = productList.filter(product => {
+    return product.title.toLowerCase().includes(query);
+  });
+
+  carregarProdutos(filteredProducts);
 });
 
 // localStorage caso ela não exista
@@ -152,7 +174,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then(categories => {
-      categories.forEach(category => {
+      // Add the "All" option
+      const allCategoriesOption = document.createElement("option");
+      allCategoriesOption.value = "";
+      allCategoriesOption.innerText = "Todas as categorias";
+      categorySelect.append(allCategoriesOption);
+
+      // Add the rest categories
+      categories.forEach(category => {        
         const optionElement = document.createElement("option");
         optionElement.value = category;
         optionElement.innerText = category;

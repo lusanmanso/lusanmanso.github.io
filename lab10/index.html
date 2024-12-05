@@ -17,14 +17,26 @@
     </header>
     <!--Main-->
     <main>
-        <!--Product section-->
-        <h2>Seleccione os seus Produtos</h2>
+
         <!--Filter section-->
         <section id="filters">
+
             <label for="filter-select">Filtrar</label>
-            <select name="filter" id="filter-select"></select> 
+            <select name="filter" id="filter-select"></select>
+
+            <label for="sort-select">Ordenar</label>
+            <select name="sort" id="sort-select">
+                <option value="asc">Preço Crescente</option>
+                <option value="desc">Preço Decrescente</option>
+            </select>
+
+            <label for="search-input">Procurar</label>
+            <input type="text" id="search-input" placeholder="Pesquisar por o produto">
+                
         </section>
 
+        <!--Product section-->
+        <h2>Seleccione os seus Produtos</h2>
         <section id="produtos">
         </section>
         <!--Selected product section-->

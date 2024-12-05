@@ -50,6 +50,18 @@ h2 {
     padding: 20px;
 }
 
+/* FILTER SECTION */
+#filters {
+    display: flex;
+    flex-direction: row; /* Opcional: Alinha os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaço entre os itens */
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px; /* Espaço interno */
+    background-color: yellow; /* Mantém o fundo amarelo */
+}
 /*GRID OF PRODUCTS*/
 
 #produtos {
