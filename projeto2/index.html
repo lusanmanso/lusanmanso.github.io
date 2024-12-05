@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <h1>Loja Online</h1>
+        <nav>
+            <a href="#produtos">Produtos</a>
+            <a href="#cesto">Cesto</a>
+        </nav>
+    </header>
+    <!--Main-->
+    <main>
+
+        <!--Filter section-->
+        <section id="filters">
+
+            <label for="filter-select">Filtrar</label>
+            <select name="filter" id="filter-select"></select>
+
+            <label for="sort-select">Ordenar</label>
+            <select name="sort" id="sort-select">
+                <option value="asc">Preço Crescente</option>
+                <option value="desc">Preço Decrescente</option>
+            </select>
+
+            <label for="search-input">Procurar</label>
+            <input type="text" id="search-input" placeholder="Pesquisar por o produto">
+                
+        </section>
+
+        <!--Product section-->
+        <h2>Seleccione os seus Produtos</h2>
+        <section id="produtos">
+        </section>
+        <!--Selected product section-->
+        <h2>Produtos Seleccionados</h2>
+        <section id="cesto">
+        </section>
+    </main>
+    <!--Footer-->
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>

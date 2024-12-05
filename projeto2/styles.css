@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+    top: 0; /*LITERALMENTE LO ÚNICO QUE NECESITABA PARA QUE EL HEADER FUNCIONASE*/
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+
+    background-color: mediumvioletred;
+}
+
+header h1 {
+    font-size: 50px;
+    color: white;
+}
+
+header nav a {
+    justify-content: space-evenly;
+
+    padding: 10px;
+    text-decoration: none;
+
+    color: white;
+    background-color: #0139ef;
+    border-radius: 5px;
+}
+
+main {
+    margin-top: 80px;
+    background-color: powderblue;
+
+}
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* FILTER SECTION */
+#filters {
+    display: flex;
+    flex-direction: row; /* Opcional: Alinha os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaço entre os itens */
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px; /* Espaço interno */
+    background-color: yellow; /* Mantém o fundo amarelo */
+}
+/*GRID OF PRODUCTS*/
+
+#produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 20px 40px 40px 40px;
+    gap: 40px;
+
+    background-color: powderblue;
+}
+
+/*PRODUCT APPEARANCE*/
+
+.product {
+    text-align: center;
+
+    padding: 10px;
+
+    background-color: white;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.product-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.product-description {
+    margin: 0 auto;
+    width: 80%;
+
+    background-color: lightgray;
+    text-align: justify;
+
+    padding: 10px;
+    font-family: "Times New Roman", serif;
+    border-radius: 10px;
+}
+
+#produtos img {
+    height: 200px;
+}
+
+#produtos button {
+    margin-top: 15px;
+    padding: 10px;
+    color: white;
+    background-color: #0139ef;
+    border-radius: 5px;
+}
+
+/* THE SAME BUT IN CESTO */
+#cesto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 20px 40px 0 40px;
+    padding-bottom: 15px;
+    gap: 40px 20px; /* 40px entre filas, 20px entre columnas */
+
+}
+
+.cart-product {
+    text-align: center;
+
+    padding: 10px;
+
+    background-color: mediumvioletred;
+    border-radius: 10px;
+}
+
+.cart-product h3 {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+#cesto img {
+    height: 200px;
+}
+
+#cesto button {
+    margin-top: 15px;
+    padding: 10px;
+    color: blue;
+    background-color: white;
+    border-radius: 5px;
+}
+
+footer {
+    background: yellow;
+}
+
+footer p {
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px;
+}
