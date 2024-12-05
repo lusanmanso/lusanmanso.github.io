@@ -1,45 +1,16 @@
-fetch("https://deisishop.pythonanywhere.com")
-    .then(responde => responde.json())
-    .then(categories => {
-        console.log(categories);
-    });
-
 const categorySelect = document.getElementById("filter-select");
-
-fetch("https://deisishop.pythonanywhere.com/categories")
-    .then(response => response.json())
-    .then((categories) => {
-        let categoryList = categories;
-
-        categoryList.forEach(category => {
-            const optionElement = document.createElement("option");
-            // ? optionElement.value = category.name;
-            optionElement.innerText = category.name;
-            categoryList.append(optionElement);
-        });
-    });
-
 let productList = [];
 
-fetch("https://deisishop.pythonanywhere.com/products")
-    .then(response => response.json())
-    .then(products => {
-        productList = products;
-        console.log(productList);
-    });
-
-categorySelect.addEventListener("change", ()=> {
-    document.innerHTML = ''; // Clean the document
+// Manage the category change
+categorySelect.addEventListener("change", () => {
     const selectedCategory = categorySelect.value;
 
-    const filteredProducts = productList.filter((product) => {
-        product.category.includes(selectedCategory);
-    })
+    // condición ? valor_si_es_verdadero : valor_si_es_falso;
+    const filteredProducts = selectedCategory
+    ? productList.filter(product => product.category == (selectedCategory)) // Filtrar por categoría
+    : productList; // Mostrar todos los productos si no hay categoría seleccionada
 
-    filteredProducts.forEach(product => {
-        const newArticle = createProduct(product);
-        document.body.appendChild(newArticle);
-    });
+    carregarProdutos(filteredProducts); // Mostrar los productos filtrados
 });
 
 // localStorage caso ela não exista
@@ -47,17 +18,13 @@ if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
 }
 
-// Crie um eventlistener que, quando tenha descarregado todo o DOM (evento JavaScript DOMContentLoaded),
-// chame uma função carregarProdutos(produtos) que recebe como argumento a variável produtos.
-document.addEventListener("DOMContentLoaded", () => {
-    carregarProdutos(productList);
-    atualizaCesto();
-})
-
 // Recebe lista de produtos
 function carregarProdutos(productList) {
 
     const productContainer = document.getElementById("produtos");
+
+    productContainer.innerHTML = ""; // Limpiar contenido previo
+
     productList.forEach(produto => {
         const newArticle = criarProduto(produto);
         productContainer.appendChild(newArticle)
@@ -66,6 +33,7 @@ function carregarProdutos(productList) {
 
 // Recebe o produto a inserir
 function criarProduto(produto) {
+
     const newArticle = document.createElement("article");
     newArticle.className = "product"
 
@@ -110,6 +78,8 @@ function criarProduto(produto) {
         // mensagem de confirmação
         alert(`"${produto.title}" was added`);
 
+        atualizaCesto();
+
     })
 
     return newArticle;
@@ -129,6 +99,8 @@ function atualizaCesto() {
         const cestoItem = criaProdutoCesto(produto)
         cesto.append(cestoItem);
     })
+
+    cargarProductos(productList);
 
 }
 
@@ -160,8 +132,7 @@ function criaProdutoCesto(produto) {
         produtosSelecionados = produtosSelecionados.filter(p => p.id != produto.id) // Filtro
         localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados)); // Actualizar localStorage
 
-        atualizaCesto()
-        location.reload();
+        atualizaCesto();
 
     })
 
@@ -169,3 +140,41 @@ function criaProdutoCesto(produto) {
 
     return newArticleCart;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Cargar categorías
+  fetch("https://deisishop.pythonanywhere.com/categories")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Error al obtener categorías");
+      }
+      return response.json();
+    })
+    .then(categories => {
+      categories.forEach(category => {
+        const optionElement = document.createElement("option");
+        optionElement.value = category;
+        optionElement.innerText = category;
+        categorySelect.append(optionElement);
+      });
+    })
+    .catch(error => console.error("Error at charging categories:", error));
+
+  // Cargar todos los productos al inicio
+  fetch("https://deisishop.pythonanywhere.com/products/")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Error al obtener productos");
+      }
+      return response.json();
+    })
+    .then(products => {
+      productList = products;
+      cargarProductos(productList); // Mostrar todos los productos al inicio
+    })
+    .catch(error => console.error("Error al cargar productos:", error));
+
+    atualizaCesto();
+
+});
