@@ -1,6 +1,8 @@
 const categorySelect = document.getElementById("filter-select");
 const sortSelect = document.getElementById("sort-select");
 const searchInput = document.getElementById("search-input");
+
+// Added for Projeto 2 - Defensa
 const buyEverything = document.getElementById("everythingButton");
 const lessInfo = document.getElementById("lessInfo");
 let productList = [];
@@ -60,13 +62,20 @@ buyEverything.addEventListener("click", (productList) => {
   atualizaCesto();
 
   alert("Todos os produtos foram adicionados ao carrinho!");
-
 });
 
 // 4. Menos info que elimina la description
 lessInfo.addEventListener("click", () => {
 
-  
+  const descriptions = document.querySelectorAll('.product-description')
+
+  descriptions.forEach(description => {
+    if(description.style.display == "none") { // if it actually appears or not
+      description.style.display = "block";
+    } else {
+      description.style.display = "none";
+    }
+  });
 
 });
 
